@@ -1,3 +1,12 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+home_default:
+  path: /
+  controller: App\Controller\HomeController::defaultAction
+
+home_hello:
+  path: /hello/{name}/{age}
+  defaults: {"age": "18", "name": "Albert"}
+  controller: App\Controller\HomeController::hello
