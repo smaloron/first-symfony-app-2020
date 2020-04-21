@@ -10,3 +10,8 @@ home_hello:
   path: /hello/{name}/{age}
   defaults: {"age": "18", "name": "Albert"}
   controller: App\Controller\HomeController::hello
+
+home_add:
+  path: /addition/{n1}+{n2}
+  defaults: {"n1": "1", "n2": "1"}
+  controller: App\Controller\HomeController::add
