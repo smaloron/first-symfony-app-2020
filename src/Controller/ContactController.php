@@ -4,15 +4,16 @@
 namespace App\Controller;
 
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ContactController
+class ContactController extends AbstractController
 {
 
     /**
      * @Route(  "/contact/{domain}/{budget}",
-     *          defaults={"domain": "production"},
+     *          defaults={"domain": "production", "budget": "10"},
      *          requirements={
      *              "domain": "production|dev|commercial",
      *              "budget": "\d+"
@@ -21,7 +22,10 @@ class ContactController
      * @return Response
      */
     public function index($domain, $budget){
-        return new Response("Page des contacts pour $domain");
+        return $this->render("contact.html.twig", [
+            "domain" => $domain,
+            "money" => $budget
+        ]);
     }
 
 }

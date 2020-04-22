@@ -4,16 +4,17 @@
 namespace App\Controller;
 
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class HomeController
+class HomeController extends AbstractController
 {
 
     public function defaultAction(Request $request){
         $page = $request->query->get("page", 1);
 
-        return new Response("Hello default vous êtes sur la page $page");
+        return $this->render("home/index.html.twig", ["page" => $page]);
     }
 
     public function hello($age, $name){

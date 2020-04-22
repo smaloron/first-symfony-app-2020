@@ -1,0 +1,10 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <a href="{{ path('app_contact_index', {'budget': '50', 'domain': 'production'}) }}">
+        Contact pour production
+    </a>
+
+    <h1>Hello default vous êtes sur la page {{ page }}</h1>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Page Contact {% endblock %}
+
+{% block body %}
+
+    <a href="{{ path("home_default") }}">Lien vers home</a>
+
+    <h1>Page des contacts</h1>
+    <h3>Pour le domaine {{ domain }}</h3>
+    <p>avec un budget {{ money }}</p>
+{% endblock %}
