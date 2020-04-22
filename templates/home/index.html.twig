@@ -7,4 +7,12 @@
     </a>
 
     <h1>Hello default vous êtes sur la page {{ page }}</h1>
+
+    <ul>
+        {% for fruit in fruitList %}
+            <li style="color:{{ loop.index is divisible by(2)? 'red':'green' }}">
+                {{ fruit }}
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
