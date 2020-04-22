@@ -106,4 +106,15 @@ class Person
 
         return $this;
     }
+
+    public function getFullName(){
+        $fullName = $this->gender=="F"? "Madame ":"Monsieur ";
+        if(! empty($this->firstName)){
+            $fullName .= $this->firstName. " ";
+        }
+
+        $fullName .= strtoupper($this->name);
+
+        return $fullName;
+    }
 }
